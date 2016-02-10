@@ -22,7 +22,7 @@ syn match pillarTable /^|.*$/ contained nextgroup=pillarTable
 
 syn match pillarListItem /^[-#]+/ contained nextgroup=pillarListItem
 syn match pillarDefnItem /^;.*$/ contained nextgroup=pillarDataItem
-syn match piedDataItem /^:/ contained nextgroup=pillarDefnItem
+syn match pillarDataItem /^:/ contained nextgroup=pillarDefnItem
 
 syn match pillarAnnotation /^@@\(note\|todo\)\s+.*$/ contained
 syn match pillarComment /^%.*$/ contained nextgroup=pillarComment

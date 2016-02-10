@@ -1,6 +1,6 @@
 " Vim syntax file
 " Language: Pillar
-" URL: https://github.com/DamienCassou/pillar-documentation
+" URL: https://github.com/pillar-markup/pillar-documentation
 
 if version < 600
     syntax clear

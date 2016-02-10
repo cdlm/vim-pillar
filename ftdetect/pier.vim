@@ -1,1 +1,1 @@
-autocmd! BufNewFile,BufRead *.pier setfiletype pier
+autocmd! BufNewFile,BufRead *.pier setfiletype pillar

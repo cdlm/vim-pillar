@@ -1,5 +1,5 @@
 " Vim syntax file
-" Language: Pier
+" Language: Pillar
 " URL: https://github.com/DamienCassou/pillar-documentation
 
 if version < 600
@@ -13,58 +13,58 @@ syn sync linebreaks=1
 
 """ Block level markup
 
-syn match pierHeader /^!\+.\+$/ contains=@Spell
+syn match pillarHeader /^!\+.\+$/ contains=@Spell
 
-syn match pierPreBlock /= .*\n/ contained nextgroup=pierCodeBlock
-syn region pierCodeBlock start=/^\[\[\[\([^=]\+=[^|]\+\(|[^=]\+=[^|]\+\)*\)\?\n/ end=/^]]]/
+syn match pillarPreBlock /= .*\n/ contained nextgroup=pillarCodeBlock
+syn region pillarCodeBlock start=/^\[\[\[\([^=]\+=[^|]\+\(|[^=]\+=[^|]\+\)*\)\?\n/ end=/^]]]/
 
-syn match pierTable /^|.*$/ contained nextgroup=pierTable
+syn match pillarTable /^|.*$/ contained nextgroup=pillarTable
 
-syn match pierListItem /^[-#]+/ contained nextgroup=pierListItem
-syn match pierDefnItem /^;.*$/ contained nextgroup=pierDataItem
-syn match piedDataItem /^:/ contained nextgroup=pierDefnItem
+syn match pillarListItem /^[-#]+/ contained nextgroup=pillarListItem
+syn match pillarDefnItem /^;.*$/ contained nextgroup=pillarDataItem
+syn match piedDataItem /^:/ contained nextgroup=pillarDefnItem
 
-syn match pierAnnotation /^@@\(note\|todo\)\s+.*$/ contained
-syn match pierComment /^%.*$/ contained nextgroup=pierComment
-syn region pierRaw start=/^{{{\(latex\|html\|markdown\):\n/ end=/^}}}/
+syn match pillarAnnotation /^@@\(note\|todo\)\s+.*$/ contained
+syn match pillarComment /^%.*$/ contained nextgroup=pillarComment
+syn region pillarRaw start=/^{{{\(latex\|html\|markdown\):\n/ end=/^}}}/
 
 
 """ Inline markup
 
-syn match pierLink /\([+*]\)\([^>]+>\)\?[^|+*]+\(|[^=]+=[^|+*]+\)*\1/
+syn match pillarLink /\([+*]\)\([^>]+>\)\?[^|+*]+\(|[^=]+=[^|+*]+\)*\1/
 
-syn match pierStrong        /\s""\([^" ]\|[^"]\( [^"]\)\+\)\+""/ contains=@Spell
-syn match pierEmphasis      /\s''\([^' ]\|[^']\( [^']\)\+\)\+''/ contains=@Spell
-syn match pierMonospace     /\s==\([^= ]\|[^=]\( [^=]\)\+\)\+==/ contains=@Spell
-syn match pierStrikethrough /\s--\([^- ]\|[^-]\( [^-]\)\+\)\+--/ contains=@Spell
-syn match pierUnderlined    /\s__\([^_ ]\|[^_]\( [^_]\)\+\)\+__/ contains=@Spell
-syn match pierSubscript     /\s@@\([^@ ]\|[^@]\( [^@]\)\+\)\+@@/ contains=@Spell
-syn match pierSuperscript   /\s\^\^\([^^ ]\|[^^]\( [^^]\)\+\)\+\^\^/ contains=@Spell
+syn match pillarStrong        /\s""\([^" ]\|[^"]\( [^"]\)\+\)\+""/ contains=@Spell
+syn match pillarEmphasis      /\s''\([^' ]\|[^']\( [^']\)\+\)\+''/ contains=@Spell
+syn match pillarMonospace     /\s==\([^= ]\|[^=]\( [^=]\)\+\)\+==/ contains=@Spell
+syn match pillarStrikethrough /\s--\([^- ]\|[^-]\( [^-]\)\+\)\+--/ contains=@Spell
+syn match pillarUnderlined    /\s__\([^_ ]\|[^_]\( [^_]\)\+\)\+__/ contains=@Spell
+syn match pillarSubscript     /\s@@\([^@ ]\|[^@]\( [^@]\)\+\)\+@@/ contains=@Spell
+syn match pillarSuperscript   /\s\^\^\([^^ ]\|[^^]\( [^^]\)\+\)\+\^\^/ contains=@Spell
 
 
 """ highlight groups
 
-hi link pierHeader Title
+hi link pillarHeader Title
 
-hi link pierPreBlock String
-hi link pierCodeBlock String
+hi link pillarPreBlock String
+hi link pillarCodeBlock String
 
-hi link pierTable Operator
+hi link pillarTable Operator
 
-hi link pierListItem Operator
-hi link pierDefnItem Define
-hi link pierDataItem Operator
+hi link pillarListItem Operator
+hi link pillarDefnItem Define
+hi link pillarDataItem Operator
 
-hi link pierAnnotation Keyword
-hi link pierComment Comment
-hi link pierRaw Comment
+hi link pillarAnnotation Keyword
+hi link pillarComment Comment
+hi link pillarRaw Comment
 
-hi link pierLink Identifier
+hi link pillarLink Identifier
 
-hi link pierStrong        Special
-hi link pierEmphasis      Special
-hi link pierMonospace     String
-hi link pierStrikethrough Special
-hi link pierUnderlined    Special
-hi link pierSubscript     Special
-hi link pierSuperscript   Special
+hi link pillarStrong        Special
+hi link pillarEmphasis      Special
+hi link pillarMonospace     String
+hi link pillarStrikethrough Special
+hi link pillarUnderlined    Special
+hi link pillarSubscript     Special
+hi link pillarSuperscript   Special
